@@ -356,7 +356,11 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-16 md:mb-6">
 
         <!-- ============================================== -->
-        <!-- PAGE 1: LANDING PAGE -->
+
+        
+        <!-------------------------------------------------------------------- PAGE 1: LANDING PAGE---------------------------------------------------------------------------------------------------------------------------- -->
+
+        
         <!-- ============================================== -->
         <div id="page-landing" class="space-y-12">
             <!-- Hero Banner -->
@@ -492,7 +496,11 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- PAGE 2: USER DASHBOARD (CHALLENGE LOBBY) -->
+
+        
+        <!-------------------------------------------------- PAGE 2: USER DASHBOARD (CHALLENGE LOBBY)--------------------------------------------------------- -->
+
+        
         <!-- ============================================== -->
         <div id="page-dashboard" class="space-y-6 hidden">
             <!-- Active Notification Ticker -->
@@ -616,7 +624,11 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- PAGE 3: LIVE GAME ROOM / DISPUTE PAGE -->
+
+        
+        <!-- --------------------------------------------------------PAGE 3: LIVE GAME ROOM / DISPUTE PAGE--------------------------------------------------- -->
+
+        
         <!-- ============================================== -->
         <div id="page-liveroom" class="space-y-6 hidden">
             <!-- Game Active banner and status -->
@@ -837,7 +849,11 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- PAGE 4: WALLET & TRANSACTION PAGE -->
+
+        
+        <!-- -------------------------------------------------PAGE 4: WALLET & TRANSACTION PAGE-------------------------------------------------------------->
+
+        
         <!-- ============================================== -->
         <div id="page-wallet" class="space-y-6 hidden">
             <!-- Digital Wallet Status Header Banner -->
@@ -1491,27 +1507,23 @@
         }
     </script>
     <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+// 1. Add Firestore and Auth Imports
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, addDoc, collection, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAlM7BYCcoAXFdOZlHH4yVFIrx_eE3Bxos",
-    authDomain: "ludomatchup-88fc4.firebaseapp.com",
-    projectId: "ludomatchup-88fc4",
-    storageBucket: "ludomatchup-88fc4.firebasestorage.app",
-    messagingSenderId: "183556292840",
-    appId: "1:183556292840:web:23754ff776c8548e29095d",
-    measurementId: "G-NVJJQS4RLL"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyAlM7BYCcoAXFdOZlHH4yVFIrx_eE3Bxos",
+  authDomain: "ludomatchup-88fc4.firebaseapp.com",
+  projectId: "ludomatchup-88fc4",
+  storageBucket: "ludomatchup-88fc4.appspot.com",
+  messagingSenderId: "931293234907",
+  appId: "1:931293234907:web:fbbe7ff804fc92150fe7d6"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+// Initialize Firebase services
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);       // Reference for User Authentication
+const db = getFirestore(app);    // Reference for Firestore Database
 </body>
 </html>
